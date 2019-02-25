@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Highlight.create(name: "Universidade das Gambelas")
+Highlight.create(name: "Aeroporto de Lisboa")
+Highlight.create(name: "Aeroporto de Faro")
+Highlight.create(name: "Aeroporto do Porto")
+Highlight.create(name: "Mosteiro dos Jerónimos")
+Highlight.create(name: "Palácio de belém")
+Highlight.create(name: "Aeroporto de Faro")
+Highlight.create(name: "Torre de belém")
+Highlight.create(name: "Estádio de Alvalade")
+Highlight.create(name: "Rotunda da Boavista")
