@@ -1,24 +1,59 @@
-# README
+# INDIE CAMPIERS API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was built with the following stack
 
-Things you may want to cover:
+ruby 2.6.0p0 (2018-12-25 revision 66547)
 
-* Ruby version
+rails 5.2.2
 
-* System dependencies
+## Installation
 
-* Configuration
+Clone the project
 
-* Database creation
+And then execute:
 
-* Database initialization
+    $ rails db:drop db:migrate db:migrate db:seed
 
-* How to run the test suite
+## How to use - Step by Step
 
-* Services (job queues, cache servers, search engines, etc.)
+1- Creating Highlights
 
-* Deployment instructions
+Start by creating more Highlights(if you want to). 
 
-* ...
+  For that you should do:
+  ```ruby
+    Highlight.create(name: FILL_IN)
+  ```
+2 - Using the built in Geocoder
+
+Incase you want to check the coordinates
+
+  You should do:
+   ```ruby
+    Geocoder.search(FILL_IN)
+  ```
+
+3 - URL ENDPOINTS
+
+To check all the highlights from point A to point B, type in the following URL
+
+  http://localhost:3000/routes?start_point=FILL_IN&end_point=FILL_IN # The following example assumes a 20km radius default
+
+Example:
+
+  http://localhost:3000/routes?start_point=Faro,pt&end_point=Porto
+
+In case you wanna specify a specific radius do:
+
+  http://localhost:3000/routes?start_point=Faro,pt&end_point=Porto&radius=40
+
+
+To check the closest highlight to a given set of coordinates you should do:
+
+  http://localhost:3000/highlights?lat=FILL_IN&lon=FILL_IN
+
+Example:
+
+  http://localhost:3000/highlights?lat=37.0193548&lon=-7.9304397
+
+And that's pretty much it
