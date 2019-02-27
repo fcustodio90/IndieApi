@@ -35,7 +35,7 @@ Incase you want to check the coordinates
     Geocoder.search(FILL_IN)
   ```
 
-3 - URL ENDPOINTS
+3 - URL Endpoints
 
 To check all the highlights from point A to point B, type in the following URL
 
@@ -58,7 +58,7 @@ Example:
 
     http://localhost:3000/highlights?lat=37.0193548&lon=-7.9304397
 
-4 - TODO
+4 - Todo
 
     In this exercise there aren't validations for the URL params. But in a production env they should be made in order to assure that the user inserts coordinates for the closest highlight and locations(non coordinates) for routes.
 
