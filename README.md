@@ -12,6 +12,8 @@ Clone the project
 
 And then execute:
 
+    $ bundle install
+
     $ rails db:drop db:migrate db:migrate db:seed
 
 ## How to use - Step by Step
@@ -37,23 +39,23 @@ Incase you want to check the coordinates
 
 To check all the highlights from point A to point B, type in the following URL
 
-  http://localhost:3000/routes?start_point=FILL_IN&end_point=FILL_IN # The following example assumes a 20km radius default
+    http://localhost:3000/routes?start_point=FILL_IN&end_point=FILL_IN # The following example assumes a 20km radius default
 
 Example:
 
-  http://localhost:3000/routes?start_point=Faro,pt&end_point=Porto
+    http://localhost:3000/routes?start_point=Faro,pt&end_point=Porto
 
 In case you wanna specify a specific radius do:
 
-  http://localhost:3000/routes?start_point=Faro,pt&end_point=Porto&radius=40
+    http://localhost:3000/routes?start_point=Faro,pt&end_point=Porto&radius=40
 
 
 To check the closest highlight to a given set of coordinates you should do:
 
-  http://localhost:3000/highlights?lat=FILL_IN&lon=FILL_IN
+    http://localhost:3000/highlights?lat=FILL_IN&lon=FILL_IN
 
 Example:
 
-  http://localhost:3000/highlights?lat=37.0193548&lon=-7.9304397
+    http://localhost:3000/highlights?lat=37.0193548&lon=-7.9304397
 
 And that's pretty much it
