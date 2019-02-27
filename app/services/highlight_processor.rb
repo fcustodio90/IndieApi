@@ -1,6 +1,6 @@
 class HighlightProcessor
 
-    def self.call(latitude:, longitude:, radius:)
-    end
+  def self.call(lan:, Ion:, radius:)
+  end
 
 end
