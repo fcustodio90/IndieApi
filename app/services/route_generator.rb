@@ -8,23 +8,11 @@ class RouteGenerator
   end
 
   def calc
-    # api_key = ENV['GOOGLE_GEOCODER_API']
-    origin = start_coordinate.join(', ').gsub(',', '+')
-    destination = end_coordinate.join(',').gsub(',', '+')
-
-  #  # Setup global parameters
-  # GoogleMapsService.configure do |config|
-  #   config.key = api_key
-  #   config.retry_timeout = 20
-  #   config.queries_per_second = 10
-  # end
-
   # Initialize client using global parameters
-  
   gmaps = GoogleMapsService::Client.new
   routes = gmaps.directions(
-    "#{origin}",
-    "#{destination}",
+    "#{start_coordinate[0]},#{start_coordinate[1]}",
+    "#{end_coordinate[0]},#{end_coordinate[1]}",
     mode: 'driving',
     alternatives: false)
 
@@ -35,7 +23,15 @@ class RouteGenerator
   encoded_path = polyline[:points]
   path = GoogleMapsService::Polyline.decode(encoded_path)
   #=> [{:lat=>38.5, :lng=>-120.2}, {:lat=>40.7, :lng=>-120.95}, {:lat=>43.252, :lng=>-126.45300000000002}]
+  
+  route = path.map do |object|
+    RouteStruct.new(
+      lat: object[:lat],
+      lon: object[:lng]
+    )
+  end
 
+  HighlightBuilder.new(route: route, radius: 10).calc
   end
 
 end

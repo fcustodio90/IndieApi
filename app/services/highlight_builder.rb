@@ -8,8 +8,11 @@ class HighlightBuilder
   end
 
   def calc
+    results = []
     route.map do |coordinate|
-      processor.calc(lat: coordinate.latitude, lon: coordinate.longitude, radius: radius)
+      results << processor.call(lat: coordinate.lat, lon: coordinate.lon, radius: radius)
     end
+    results.flatten.uniq { |highlight| highlight.name }
   end
+  
 end
