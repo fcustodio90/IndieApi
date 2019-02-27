@@ -58,4 +58,8 @@ Example:
 
     http://localhost:3000/highlights?lat=37.0193548&lon=-7.9304397
 
+4 - TODO
+
+  In this exercise there aren't validations for the URL params. But in a production env they should be made in order to assure that the user inserts coordinates for the closest highlight and locations(non coordinates) for routes.
+
 And that's pretty much it
