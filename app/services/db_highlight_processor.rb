@@ -1,2 +1,0 @@
-class DBHighlightProcessor < HighlightProcessor
-end
