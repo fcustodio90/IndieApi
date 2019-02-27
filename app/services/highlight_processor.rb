@@ -15,3 +15,4 @@ class HighlightProcessor
     raise "Implement this"
   end
 
+end
