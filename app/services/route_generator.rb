@@ -1,7 +1,6 @@
 class RouteGenerator
   attr_reader :starting_point, :ending_point, :radius
 
-  # RouteGenerator.new(start_coordinate: [38.7223249,-9.1393372], end_coordinate: [38.7224531,-9.1389943])
   def initialize(starting_point:, ending_point:, radius: 20)
     @starting_point = starting_point
     @ending_point = ending_point
