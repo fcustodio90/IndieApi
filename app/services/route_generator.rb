@@ -1,18 +1,19 @@
 class RouteGenerator
-  attr_reader :start_coordinate, :end_coordinate
+  attr_reader :starting_point, :ending_point, :radius
 
   # RouteGenerator.new(start_coordinate: [38.7223249,-9.1393372], end_coordinate: [38.7224531,-9.1389943])
-  def initialize(start_coordinate:, end_coordinate:)
-    @start_coordinate = start_coordinate
-    @end_coordinate = end_coordinate
+  def initialize(starting_point:, ending_point:, radius: 20)
+    @starting_point = starting_point
+    @ending_point = ending_point
+    @radius = radius
   end
 
   def calc
   # Initialize client using global parameters
   gmaps = GoogleMapsService::Client.new
   routes = gmaps.directions(
-    "#{start_coordinate[0]},#{start_coordinate[1]}",
-    "#{end_coordinate[0]},#{end_coordinate[1]}",
+    "#{starting_point}",
+    "#{ending_point}",
     mode: 'driving',
     alternatives: false)
 
@@ -31,7 +32,7 @@ class RouteGenerator
     )
   end
 
-  HighlightBuilder.new(route: route, radius: 10).calc
+  HighlightBuilder.new(route: route, radius: radius).calc
   end
 
 end

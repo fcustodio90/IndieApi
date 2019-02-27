@@ -6,4 +6,5 @@ class HighlightStruct
     @lat = lat
     @lon = lon
   end
+
 end
