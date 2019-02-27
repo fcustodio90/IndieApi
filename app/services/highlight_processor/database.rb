@@ -6,5 +6,4 @@ class HighlightProcessor::Database < HighlightProcessor
     end
     results
   end
-  puts "hello hello hello"
 end
