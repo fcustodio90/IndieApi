@@ -1,4 +1,4 @@
-# INDIE CAMPIERS API
+# INDIE CAMPERS API
 
 This project was built with the following stack
 
